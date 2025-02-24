@@ -1,24 +1,26 @@
 
 class Notes {
 	public static void main(String[] args) {
-		//creating an array
+		
+		//declare an array
 
-		// int[] numArray;
+		int[] numArray;
+		int numArray1[];
 
-		//empty array - filled with default values
+		//create an array with a size of 5
 
-		int[] numArray = new int[5];  //creates an int array of size 5
+		numArray = new int[5]; //fills the array with default values
 
-		//prebuilt array
+		//prebuilt array - filled with values
 
-		numArray = new int[]{1, 3, 5}; //need to specify new int if you don't declare the array on the same line
+		numArray = new int[]{1, 3, 5};
 
-		int[] numArray2 = {1, 3, 5, 7}; //only doable when the array is declared on the same line
+		int[] numArray2 = {1, 3, 5}; //new int[] can only be omitted when declaring on the same line as assignment
 
+		//re-assigning a value in an array
 		numArray[0] = 5;
-		System.out.println(numArray[1]);
 
-		//looking through an array
+		// System.out.println(numArray); //Does not work, outputs the reference
 
 		for (int i = 0; i < numArray.length; i++) {
 			System.out.println(numArray[i]);
@@ -29,17 +31,18 @@ class Notes {
 			System.out.println(numArray[i]);
 		}
 
-		int num = 13;
-		int index = -1;
-		//  {13, 11, 13}
-		for (int i = 0; i < numArray.length; i++) { // finds the last occurrence
+		int num = 13; //number we are searching for
+		int index = -1; //default value for our index
+
+		//find the last occurance of the value we are looking for
+		for (int i = 0; i < numArray.length; i++) {
 			if (numArray[i] == num) {
 				index = i;
-				// break;
-				// i = numArray.length;
+				//either line below will make you find the FIRST occurance
+				//break;
+				//i = numArray.length;
 			}
 		}
-
 		System.out.println(index);
 
 		String[] arr = {"z", "b", "c"};
@@ -51,8 +54,13 @@ class Notes {
 	}
 
 	public static void firstElementA(String[] arr) {
-		//any array modifications will alter the array outside of the function
-		//arrays don't to return anything if they are altering
+		//any array modifications made inside a function, affect the array outside of it
+		//altering an array? don't return anything
 		arr[0] = "a";
+	}
+
+	public static int[] arrayReturn() {
+		int[] arr = {};
+		return arr;
 	}
 }
